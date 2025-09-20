@@ -1,65 +1,148 @@
-<!DOCTYPE html>
-
-<html lang="en">
+<!Doctype HTML>
     <head>
+        <title>Mi primer PortFolio</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/CSS" href="estilo.css">    
+        <script>
+        // Cambio de modo claro/oscuro
+        function toggleMode() {
+            document.documentElement.classList.toggle('light-mode');
+        }
+        // Cambio de idioma (ES/EN)
+        const translations = {
+            es: {
+                sobreMi: 'Sobre mí',
+                proyectos: 'Proyectos',
+                contacto: 'Contacto',
+                descripcion: 'Soy un chico de 20 años apasionado por la programación y el aprendizaje constante. Me motiva mejorar día a día, disfruto trabajar en equipo y valoro la cooperación para crear cosas increíbles con la tecnología. Tengo un emprendimiento llamado <strong>SpeedTech</strong>, donde aplico mis conocimientos y valores para crecer profesional y personalmente. Me considero una persona con buenos valores, responsable y siempre dispuesta a enfrentar nuevos desafíos.'
+            },
+            en: {
+                sobreMi: 'About me',
+                proyectos: 'Projects',
+                contacto: 'Contact',
+                descripcion: 'I am a 20-year-old passionate about programming and constant learning. I am motivated to improve every day, I enjoy teamwork and value cooperation to create amazing things with technology. I have a venture called <strong>SpeedTech</strong>, where I apply my knowledge and values to grow professionally and personally. I consider myself a person with good values, responsible and always ready to face new challenges.'
+            }
+        };
+        function setLang(lang) {
+            document.getElementById('sobre-mi-titulo').innerText = translations[lang].sobreMi;
+            document.getElementById('proyectos-titulo').innerText = translations[lang].proyectos;
+            document.getElementById('contacto-titulo').innerText = translations[lang].contacto;
+            document.getElementById('sobre-mi-desc').innerHTML = translations[lang].descripcion;
+        }
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="scream">¡Bienvenido a mi portfolio! 🚀 Disponible en español e inglés, con modo oscuro y claro.</div>
+            <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-bottom: 1rem;">
+                <button class="btn" onclick="toggleMode()">🌙/☀️</button>
+                <button class="btn" onclick="setLang('es')">ES</button>
+                <button class="btn" onclick="setLang('en')">EN</button>
+            </div>
+            <img src="FotoPerfil.jpg.jpg" alt="Foto de Perfil" class="foto-perfil">
+            <h1 class="fade-in" id="nombre-typing"></h1>
+            <p>Full Stack Web Developer & Junior App Developer | Creativo | Apasionado por la tecnología</p>
+        </header>
+        <main>
+            <section id="logros">
+                <h2>Logros & Certificados</h2>
+                <ul>
+                    <li>Certificado en Desarrollo Web - JuniorAchievement Argentina con Microsoft</li>
+                    <li>Certificado en Java - Oracle Academy</li>
+                    <li>Certificado en Bases de Datos - Udemy</li>
+                    <!-- Agrega más logros/certificados aquí -->
+                </ul>
+            </section>
+            <section id="hobbies">
+                <h2>Hobbies & Intereses</h2>
+                <ul>
+                    <li>Aprender nuevas tecnologías</li>
+                    <li>Emprender y crear proyectos</li>
+                    <li>Jugar al fútbol</li>
+                    <li>Escuchar música</li>
+                    <li>Colaborar en equipos</li>
+                </ul>
+            </section>
+            <section id="timeline">
+                <h2>Experiencia</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">2024 - Presente</span>
+                        <span class="timeline-desc">Fundador de SpeedTech</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">2023 - 2024</span>
+                        <span class="timeline-desc">Desarrollador Web Freelance</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">2022 - Presente</span>
+                        <span class="timeline-desc">Cursando T.U.P (Tecnicatura Universitaria en Programación) en UTN</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">2022 - 2023</span>
+                        <span class="timeline-desc">Estudiante de Java y Bases de Datos</span>
+                    </div>
+                </div>
+            </section>
+            <section id="sobre-mi">
+                <h2 id="sobre-mi-titulo">Sobre mí</h2>
+                <p id="sobre-mi-desc">Soy un chico de 20 años apasionado por la programación y el aprendizaje constante. Me motiva mejorar día a día, disfruto trabajar en equipo y valoro la cooperación para crear cosas increíbles con la tecnología. Tengo un emprendimiento llamado <strong>SpeedTech</strong>, donde aplico mis conocimientos y valores para crecer profesional y personalmente. Me considero una persona con buenos valores, responsable y siempre dispuesta a enfrentar nuevos desafíos.</p>
+            </section>
+            <section id="proyectos">
+                <h2 id="proyectos-titulo">Proyectos</h2>
+                <div class="proyecto fade-in" style="animation-delay:0.2s;">
+                    <h3>Portfolio Web</h3>
+                    <p>Mi portfolio personal hecho con HTML, CSS y JavaScript. Incluye modo oscuro, cambio de idioma y animaciones.</p>
+                    <a href="https://github.com/AleGarcia0/portfolio" class="btn" target="_blank">Ver Código</a>
+                    <a href="#" class="btn" target="_blank">Ver Demo</a>
+                </div>
+                <div class="proyecto fade-in" style="animation-delay:0.4s;">
+                    <h3>Segundo Proyecto HTML</h3>
+                    <p>Página web desarrollada en HTML como parte de mi aprendizaje, incluye estructura y estilos personalizados.</p>
+                    <a href="https://github.com/AleGarcia0/PROYECTOS/blob/main/SegundoProyecto.html" class="btn" target="_blank">Ver Código</a>
+                    <a href="https://raw.githack.com/AleGarcia0/PROYECTOS/main/SegundoProyecto.html" class="btn" target="_blank">Ver Demo</a>
+                </div>
+                <div class="proyecto fade-in" style="animation-delay:0.6s;">
+                    <h3>Exmane.java - Gestión Vehículos</h3>
+                    <p>Aplicación Java para la gestión de vehículos en una empresa. Permite registrar, consultar y administrar información de autos.</p>
+                    <a href="https://github.com/AleGarcia0/tup/blob/main/src/Exmane.java" class="btn" target="_blank">Ver Código</a>
+                </div>
+            </section>
+            <section id="contacto">
+                <h2 id="contacto-titulo">Contacto</h2>
+                <div class="botones-contacto">
+                    <a href="mailto:alejoagustin0814@gmail.com" class="btn"><span style="font-size:1.2em;vertical-align:middle;">✉️</span> Email</a>
+                    <a href="tel:+543704919434" class="btn"><span style="font-size:1.2em;vertical-align:middle;">📞</span> Llamar</a>
+                    <a href="CV_Alejo_Garciaa.pdf" class="btn" target="_blank"><span style="font-size:1.2em;vertical-align:middle;">📄</span> Ver CV</a>
+                    <a href="https://www.linkedin.com/in/alejo-garcia-61a7bb371/" class="btn" target="_blank"><span style="font-size:1.2em;vertical-align:middle;">🔗</span> LinkedIn</a>
+                    <a href="https://github.com/AleGarcia0" class="btn" target="_blank"><span style="font-size:1.2em;vertical-align:middle;">💻</span> GitHub</a>
+                </div>
+            </section>
+        </main>
+        <script>
+        // Animación typing para el nombre
+        const nombre = "Alejo Agustin Garica";
+        let i = 0;
+        function typing() {
+            if (i <= nombre.length) {
+                document.getElementById("nombre-typing").innerText = nombre.slice(0, i);
+                i++;
+                setTimeout(typing, 120);
+            }
+        }
+        typing();
 
-    <title>CatPhotoApp</title>
-  </head>
-   <body>
-    <main>
-      <h1>CatPhotoApp</h1>
-      <section>
-        <h2>Cat Photos</h2>
-        <p>Everyone loves <a href="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg">cute cats</a> online!</p>
-        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>
-        <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
-      </section>
-      <section>
-        <h2>Cat Lists</h2>
-        <h3>Things cats love:</h3>
-        <ul>
-          <li>catnip</li>
-          <li>laser pointers</li>
-          <li>lasagna</li>
-        </ul>
-        <figure>
-          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
-          <figcaption>Cats <em>love</em> lasagna.</figcaption>  
-        </figure>
-        <h3>Top 3 things cats hate:</h3>
-        <ol>
-          <li>flea treatment</li>
-          <li>thunder</li>
-          <li>other cats</li>
-        </ol>
-        <figure>
-          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
-          <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
-        </figure>
-      </section>
-      <section>
-        <h2>Cat Form</h2>
-        <form action="https://freecatphotoapp.com/submit-cat-photo">
-          <fieldset>
-            <legend>Is your cat an indoor or outdoor cat?</legend>
-            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
-            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
-          </fieldset>
-          <fieldset>
-            <legend>What's your cat's personality?</legend>
-            <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>
-            <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
-            <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
-          </fieldset>
-          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-    </main>
-    <footer>
-      <p>
-        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
-      </p>
-    </footer>
-  </body>
-</html>
+        // Animaciones de fade-in al hacer scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2 };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+        faders.forEach(fader => { appearOnScroll.observe(fader); });
+        </script>
+    </body>
+</HTML>

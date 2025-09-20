@@ -1,0 +1,194 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #18122B;
+    color: #F3F0FF;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0 1rem 0;
+    background: #251B47;
+    box-shadow: 0 4px 24px #0005;
+    position: relative;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #A259FF;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #A259FF;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #F3F0FF;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    margin-bottom: 2.5rem;
+    background: #231942;
+    border-radius: 16px;
+    box-shadow: 0 4px 32px #0004;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s;
+}
+section:hover {
+    box-shadow: 0 8px 40px #A259FF55;
+}
+
+h2 {
+    color: #A259FF;
+    margin-bottom: 1rem;
+}
+
+
+.btn {
+    display: inline-block;
+    background: #A259FF;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0.3rem 0.5rem 0.3rem 0;
+    box-shadow: 0 4px 16px #A259FF33;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+}
+/* Banner de anuncio (scream) */
+.scream {
+    background: linear-gradient(90deg, #A259FF 60%, #6C2EBE 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 24px #A259FF55;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    animation: scream-fade 2s;
+}
+@keyframes scream-fade {
+    0% { opacity: 0; top: -40px; }
+    60% { opacity: 1; top: 0; }
+    100% { opacity: 1; top: 0; }
+}
+
+/* Timeline estilos */
+.timeline {
+    border-left: 4px solid #A259FF;
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.timeline-item {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.7rem;
+    top: 0.3rem;
+    width: 1rem;
+    height: 1rem;
+    background: #A259FF;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #A259FF99;
+}
+.timeline-date {
+    font-weight: bold;
+    color: #A259FF;
+    margin-right: 0.7rem;
+}
+.timeline-desc {
+    color: #F3F0FF;
+}
+
+/* Logros y hobbies */
+#logros ul, #hobbies ul {
+    list-style: none;
+    padding-left: 0;
+}
+#logros li::before {
+    content: '🏅 ';
+    margin-right: 0.5em;
+}
+#hobbies li::before {
+    content: '✨ ';
+    margin-right: 0.5em;
+}
+
+/* Animación typing para el nombre */
+#nombre-typing {
+    border-right: 2px solid #A259FF;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.8s step-end infinite alternate;
+}
+@keyframes blink-caret {
+    0%, 100% { border-color: #A259FF; }
+    50% { border-color: transparent; }
+}
+
+/* Fade-in animación */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+.appear {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+.btn:hover {
+    background: #6C2EBE;
+    transform: scale(1.05);
+}
+
+/* Modo claro */
+.light-mode body {
+    background: #F3F0FF;
+    color: #18122B;
+}
+.light-mode header {
+    background: #E0D7FF;
+}
+.light-mode section {
+    background: #fff;
+}
+.light-mode h1, .light-mode h2 {
+    color: #6C2EBE;
+}
+.light-mode .btn {
+    background: #6C2EBE;
+    color: #fff;
+}
+.light-mode .btn:hover {
+    background: #A259FF;
+}
